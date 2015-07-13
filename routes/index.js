@@ -7,6 +7,11 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Quiz' });
 });
 
+/* pagina de creditos */
+router.get('/authores', function(req, res, next) {
+  res.render('authores/authores', { fecha: new Date().getFullYear(), errors: [] });
+});
+
 router.get("/quizes/question", quizController.question);
 router.get("/quizes/answer", quizController.answer);
 module.exports = router;
