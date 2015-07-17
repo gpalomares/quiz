@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 
 /* pagina de creditos */
 router.get('/authores', function(req, res, next) {
-  res.render('authores/authores', { fecha: new Date().getFullYear(), errors: [] });
+  res.render('authores', { fecha: new Date().getFullYear(), errors: [] });
 });
 
 router.get("/quizes/question", quizController.question);
