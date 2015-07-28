@@ -9,3 +9,7 @@ header, nav,  section {background: #eee; text-align: center;}
 footer {background: #eee; text-align: center;}
 nav span {margin: 0px 10px 0px 0px;}
 
+table {border: 1px solid;
+margin: auto;}
+
+td{padding: 10px;}

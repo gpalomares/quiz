@@ -1,0 +1,16 @@
+
+    <table border=1>
+    <thead>
+    <th>ID</th>
+    <th>PREGUNTA</th>
+    <th>RESPUESTA</th>
+    </thead>
+    	<% for (var i in mensaje) { %>
+
+    <tr>
+    	<td><%= mensaje[i].id %></td>
+     	<td><%= mensaje[i].pregunta %></td>
+    	<td><%= mensaje[i].respuesta %></td>
+    </tr>
+                            <% } %>
+    </table>
