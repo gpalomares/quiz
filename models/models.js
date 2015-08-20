@@ -34,13 +34,24 @@ var sequelize = new Sequelize(DB_name, user, pwd, {
 //importar la definición de la tabla
 var Quiz = sequelize.import(path.join(__dirname, "quiz"));
 
+//tabla comentarios
+var Comment = sequelize.import(path.join(__dirname, "comment"));
+Comment.belongsTo(Quiz);
+Quiz.hasMany(Comment);
+
 exports.Quiz = Quiz;
+exports.Comment;
 
 sequelize.sync().then(function(){
 	Quiz.count().then(function(count){
 		if (count ===0){
 			Quiz.create({pregunta: "capital de Italia",
-							respuesta: "Roma"
+							respuesta: "Roma",
+							tema: "otro"
+						});
+			Quiz.create({pregunta: "capital de Portugal",
+							respuesta: "Lisboa",
+							tema: "otro"
 						})
 			.then(function(){console.log("Base de datos inicializada")});
 
